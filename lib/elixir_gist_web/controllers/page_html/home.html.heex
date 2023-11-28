@@ -1,3 +1,9 @@
 <div class="p-4">
-  <button class="btn btn-outline btn-info">Submit</button>
+  <button
+    phx-click={ElixirGistWeb.Layouts.App.toggle_dropdown_menu()}
+    class="btn btn-outline btn-info"
+  >
+    Submit
+  </button>
+  <div id="dropdown_menu">dropdown</div>
 </div>

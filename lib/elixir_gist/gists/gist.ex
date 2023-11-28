@@ -5,6 +5,7 @@ defmodule ElixirGist.Gists.Gist do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "gists" do
+    field :name, :string
     field :description, :string
     field :markup_text, :string
     belongs_to :user, ElixirGist.Accounts.User

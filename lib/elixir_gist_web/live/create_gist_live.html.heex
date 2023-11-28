@@ -1,0 +1,28 @@
+<.form class="text-zinc-900" for={@form} phx-submit="create" phx-change="validate">
+  <.input
+    class="input input-bordered w-full max-w-xs"
+    field={@form[:description]}
+    placeholder="Gist description.."
+    autocomplete="off"
+    phx-debounce="blur"
+  />
+  <.input
+    phx-debounce="blur"
+    field={@form[:name]}
+    placeholder="Filename including extension..."
+    autocomplete="off"
+  />
+  <div class="w-full">
+    <%= textarea(@form, :markup_text,
+      class: "rounded-lg mt-4 w-full",
+      placeholder: "Insert code...",
+      spellcheck: "false",
+      autocomplete: "off",
+      phx_debounce: "blur"
+    ) %>
+  </div>
+
+  <.button type="submit" phx-disable-with="Creating..." class="create_button">
+    Create gist
+  </.button>
+</.form>
